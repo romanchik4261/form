@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <title>Отправка формы</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="form">
+      <form enctype="multipart/form-data" method="post" id="form" onsubmit="send(event, 'send.php')" class="form__body">
+        <h1 class="form__title">Заявка на бесплатную консультацию.</h1>
+        <div class="form__item">
+          <label for="forName" class="form__label">Имя*</label>
+          <input type="text" id="forName" name="name" class="form__input _req">
+        </div>
+
+        <div class="form__item">
+          <label for="forEmail" class="form__label">Email*</label>
+          <input type="email" id="forEmail" name="email" class="form__input _req">
+        </div>
+
+        <div class="form__item">
+          <div class="form__label">Какой стиль сайта предпочитаете?</div>
+          <div class="options">
+            <div class="options__item">
+              <input type="radio" checked id="forLight" value="light" name="style" class="options__input">
+              <label for="forLight" class="options__label"><span>Светлый</span></label>
+            </div>
+            <div class="options__item">
+              <input type="radio" id="forDark" value="dark" name="style" class="options__input">
+              <label for="forDark" class="options__label"><span>Темный</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form__item">
+          <label for="formMessage" class="form__label">Напишите ваши пожелания</label>
+          <textarea name="message" id="formMessage" class="form__input"></textarea>
+        </div>
+        <div class="form__item">
+          <div class="form__label">Тут я прошу что-нибудь выбрать. Например, возрастногй диапазон вашей целевой аудитории(поменять потом name): </div>
+          <select name="age" class="select">
+            <option value="от 18 до 25">от 18 до 25</option>
+            <option value="от 25 до 45" selected>от 25 до 45</option>
+            <option value="от 45">от 45</option>
+          </select>
+        </div>
+        <div class="form__item">
+          <div class="form__label">Добавьте ваши фото и портфолио </div>
+          <div class="file">
+            <div class="file__item file__button">Выбрать
+              <input id="formImage" accept=".jpg, .png" type="file" name="myfile[]" multiple id="myfile" class="file__input">
+              <div class="file__preview"></div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="form__button">Отправить</button>
+      
+      </form>
+    </div>
+  </div>
+  
+</body>
+</html>

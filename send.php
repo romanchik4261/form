@@ -63,28 +63,28 @@ $mail->send();
     
 
     // Прикрипление файлов к письму
-if (!empty($file['name'][0])) {
-    for ($ct = 0; $ct < count($file['tmp_name']); $ct++) {
-        $uploadfile = tempnam(sys_get_temp_dir(), sha1($file['name'][$ct]));
-        $filename = $file['name'][$ct];
-        if (move_uploaded_file($file['tmp_name'][$ct], $uploadfile)) {
-            $mail->addAttachment($uploadfile, $filename);
-            $rfile[] = "Файл $filename прикреплён";
-        } else {
-            $rfile[] = "Не удалось прикрепить файл $filename";
-        }
-    }   
-}
+// if (!empty($file['name'][0])) {
+//     for ($ct = 0; $ct < count($file['tmp_name']); $ct++) {
+//         $uploadfile = tempnam(sys_get_temp_dir(), sha1($file['name'][$ct]));
+//         $filename = $file['name'][$ct];
+//         if (move_uploaded_file($file['tmp_name'][$ct], $uploadfile)) {
+//             $mail->addAttachment($uploadfile, $filename);
+//             $rfile[] = "Файл $filename прикреплён";
+//         } else {
+//             $rfile[] = "Не удалось прикрепить файл $filename";
+//         }
+//     }   
+// }
     
 
-// Проверяем отравленность сообщения
-if ($mail->send()) {$result = "success";} 
-else {$result = "error";}
+// // Проверяем отравленность сообщения
+// if ($mail->send()) {$result = "success";} 
+// else {$result = "error";}
 
-catch (Exception $e) {
-    $result = "error";
-    $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
-}
+// catch (Exception $e) {
+//     $result = "error";
+//     $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
+// }
 
-// Отображение результата
-echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);
+// // Отображение результата
+// echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);

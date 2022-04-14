@@ -5,13 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <!-- <script src="js/main.js" defer></script> -->
   <title>Отправка формы</title>
 </head>
 <body>
   <div class="wrapper">
     <div class="form">
-      <form enctype="multipart/form-data" method="post" id="form" onsubmit="send(event, 'send.php')" class="form__body">
+      <form action="send.php" name="form" method="post" id="form" class="form__body">
         <h1 class="form__title">Заявка на бесплатную консультацию.</h1>
         <div class="form__item">
           <label for="forName" class="form__label">Имя*</label>
@@ -21,6 +21,11 @@
         <div class="form__item">
           <label for="forEmail" class="form__label">Email*</label>
           <input type="email" id="forEmail" name="email" class="form__input _req">
+        </div>
+
+        <div class="form__item">
+          <label for="forPhone" class="form__label">Телефон*</label>
+          <input type="tel" id="forPhone" name="phone" class="form__input _req">
         </div>
 
         <div class="form__item">

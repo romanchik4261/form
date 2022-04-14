@@ -39,7 +39,11 @@ $mail->Subject = $theme;
 $mail->Body = $body;
 // $mail->isHTML(true);
 
-$mail->send();
+if (!$mail->send()) {
+        $message = "Ошибка отправки";
+    } else {
+        $message = "Данные отправлены!";
+    }
 
 
 

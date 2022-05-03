@@ -5,13 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <script defer src="main.js" defer></script>
+  <script defer src="libs/inputmask.min.js"></script>
+  <script defer src="libs/just-validate.min.js"></script>
+  <script defer src="libs/just-validate3.3.3.min.js"></script>
   <title>Отправка формы</title>
 </head>
 <body>
   <div class="wrapper">
     <div class="form">
-      <form action="send.php" name="form" method="POST" id="form" class="form__body">
+      <form action="mail.php" name="form" method="POST" enctype="multipart/form-data" id="form" class="form__body">
         <h1 class="form__title">Заявка на бесплатную консультацию.</h1>
         <div class="form__item">
           <label for="forName" class="form__label">Имя*</label>
@@ -64,9 +67,6 @@
           </div>
         </div>
 
-        <div class="form__button">
-          <input type="submit" id="button" value="Отправить">
-        </div>
         <button type="submit" class="form__button">Отправить</button>
       
       </form>
